@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lesson 1: Events & Popup Boxes</title>
+    <link href='https://fonts.googleapis.com/css?family=Pixelify Sans' rel='stylesheet'>
+    <style>
+        /* Page styling */
+        body {
+            background-image: url("MainBG.jpg");
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Main title */
+        h1 {
+            color: LightBlue;
+            font-size: 40px;
+            font-family: 'Pixelify Sans';
+        }
+
+        /* Lesson sections */
+        .lesson {
+            background: Gray;
+            padding: 20px;
+            margin: 20px auto;
+            border-radius: 8px;
+            width: 80%;
+        }
+
+        /* Code box styling */
+        .code-box {
+            background: black;
+            color: White;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: left;
+            font-family: 'Pixelify Sans';
+            white-space: pre-wrap;
+            overflow-x: auto;
+            margin-top: 10px;
+        }
+
+        /* Button styling */
+        button {
+            background: #ff5733;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            margin-top: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background: #ff2e00;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Lesson 1: Events & Popup Boxes</h1>
+
+    <!-- Alert Box -->
+    <div class="lesson">
+        <h2>Alert Box</h2>
+        <button onclick="showAlert()">Click Me</button>
+        <p><strong>Output:</strong> Clicking the button will show an alert box.</p>
+    </div>
+
+    <!-- User Prompt -->
+    <div class="lesson">
+        <h2>User Prompt</h2>
+        <button onclick="showPrompt()">Enter Name</button>
+        <p><strong>Output:</strong> A prompt will appear to enter your name.</p>
+    </div>
+
+    <!-- Confirm Box -->
+    <div class="lesson">
+        <h2>Confirm Box</h2>
+        <button onclick="showConfirm()">Confirm Action</button>
+        <p><strong>Output:</strong> A confirmation box will appear with "OK" and "Cancel".</p>
+    </div>
+
+    <!-- JavaScript Functions -->
+    <script>
+        function showAlert() {
+            alert("Hello! This is an alert box.");
+        }
+
+        function showPrompt() {
+            let name = prompt("What is your name?", "Guest");
+            if (name !== null && name !== "") {
+                alert("Hello, " + name + "!");
+            } else {
+                alert("You didn't enter a name.");
+            }
+        }
+
+        function showConfirm() {
+            let confirmAction = confirm("Do you want to continue?");
+            if (confirmAction) {
+                alert("You chose to continue!");
+            } else {
+                alert("You canceled the action.");
+            }
+        }
+    </script>
+
+</body>
+</html>

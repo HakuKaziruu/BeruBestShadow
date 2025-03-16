@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lesson 2:  Conditional Statements, Controls & Loops</title>
+    <link href='https://fonts.googleapis.com/css?family=Pixelify Sans' rel='stylesheet'>
+    <style>
+        /* Page styling */
+        body {
+            background-image: url("MainBG.jpg");
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Main title */
+        h1 {
+            color: LightBlue;
+            font-size: 40px;
+            font-family: 'Pixelify Sans';
+        }
+
+        /* Lesson sections */
+        .lesson {
+            background: Gray;
+            padding: 20px;
+            margin: 20px auto;
+            border-radius: 8px;
+            width: 80%;
+        }
+
+        /* Code box styling */
+        .code-box {
+            background: black;
+            color: White;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: left;
+            font-family: 'Pixelify Sans';
+            white-space: pre-wrap;
+            overflow-x: auto;
+            margin-top: 10px;
+        }
+
+        /* Button styling */
+        button {
+            background: #ff5733;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            margin-top: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background: #ff2e00;
+        }
+    </style>
+</head>
+<body>
+
+ <h1>Lesson 2: Conditional Statements, Controls & Loops</h1>
+
+    <!-- If Statement -->
+    <div class="lesson">
+        <h2>If Statement</h2>
+        <button onclick="testIf()">Click Me</button>
+        <p><strong>Output:</strong> Checks if a number is greater than 10.</p>
+    </div>
+
+    <!-- If Else Statement -->
+    <div class="lesson">
+        <h2>If Else Statement</h2>
+        <button onclick="testIfElse()">Try Me</button>
+        <p><strong>Output:</strong> Checks if a number is even or odd.</p>
+    </div>
+
+    <!-- If Else If Statement -->
+    <div class="lesson">
+        <h2>If Else If Statement</h2>
+        <button onclick="testIfElseIf()">Click to Test</button>
+        <p><strong>Output:</strong> Checks a grade and assigns a letter grade.</p>
+    </div>
+
+    <!-- Nested If Statement -->
+    <div class="lesson">
+        <h2>Nested If Statement</h2>
+        <button onclick="testNestedIf()">Check Number</button>
+        <p><strong>Output:</strong> Checks if a number is positive, negative, or zero.</p>
+    </div>
+
+    <!-- Switch Statement -->
+    <div class="lesson">
+        <h2>Switch Statement</h2>
+        <button onclick="testSwitch()">Check Day</button>
+        <p><strong>Output:</strong> Displays the day of the week based on a number.</p>
+    </div>
+
+    <!-- JavaScript Functions -->
+    <script>
+        function testIf() {
+            let num = 15;
+            if (num > 10) {
+                alert("The number is greater than 10!");
+            }
+        }
+
+        function testIfElse() {
+            let num = prompt("Enter a number:");
+            if (num % 2 === 0) {
+                alert(num + " is an even number.");
+            } else {
+                alert(num + " is an odd number.");
+            }
+        }
+
+        function testIfElseIf() {
+            let score = prompt("Enter your score:");
+            if (score >= 90) {
+                alert("Grade: A");
+            } else if (score >= 80) {
+                alert("Grade: B");
+            } else if (score >= 70) {
+                alert("Grade: C");
+            } else {
+                alert("Grade: F");
+            }
+        }
+
+        function testNestedIf() {
+            let num = prompt("Enter a number:");
+            if (num >= 0) {
+                if (num == 0) {
+                    alert("The number is zero.");
+                } else {
+                    alert("The number is positive.");
+                }
+            } else {
+                alert("The number is negative.");
+            }
+        }
+
+        function testSwitch() {
+            let day = prompt("Enter a number (1-7) for the day of the week:");
+            let dayName;
+            switch (parseInt(day)) {
+                case 1: dayName = "Sunday"; break;
+                case 2: dayName = "Monday"; break;
+                case 3: dayName = "Tuesday"; break;
+                case 4: dayName = "Wednesday"; break;
+                case 5: dayName = "Thursday"; break;
+                case 6: dayName = "Friday"; break;
+                case 7: dayName = "Saturday"; break;
+                default: dayName = "Invalid number!";
+            }
+            alert("The day is: " + dayName);
+        }
+    </script>
+</body>
+</html>

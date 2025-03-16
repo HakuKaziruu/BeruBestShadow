@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>E-Portfolio | Activities</title>
+    <link href='https://fonts.googleapis.com/css?family=Pixelify Sans' rel='stylesheet'>
+    <style>
+        body {
+            font-family: 'Pixelify Sans';
+            text-align: center;
+            margin: 20px;
+	    background-image: url("MainBG.jpg");
+        }
+
+        h1 {
+            color: White;
+        }
+
+        /* Grid container for images and videos */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            max-width: 800px;
+            margin: 20px auto;
+        }
+
+        /* Image and video styling */
+        .gallery img, .gallery video {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        /* Hover effect */
+        .gallery img:hover, .gallery video:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+<br>
+    <h1>Activities (One-Act Play, Zumba, StreetDance)</h1>
+<br><br>
+
+    <!-- Image Gallery -->
+    <div class="gallery">
+        <img src="Pic1.jpg" alt="Pic1" onclick="showAlert('OAP')">
+        <img src="Pic2.jpg" alt="Pic2" onclick="showAlert('OAP')">
+        <img src="Pic3.jpg" alt="Pic3" onclick="showAlert('OAP')">
+        <img src="Pic4.jpg" alt="Pic4" onclick="showAlert('OAP')">
+    </div>
+
+    <!-- Video Gallery -->
+    <div class="gallery">
+        <video controls onclick="showAlert('OAP')">
+            <source src="Vid1.mp4" type="video/mp4">
+        </video>
+        <video controls onclick="showAlert('OAP')">
+            <source src="Vid2.mp4" type="video/mp4">
+        </video>
+        <video controls onclick="showAlert('OAP')">
+            <source src="Vid3.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <video controls onclick="showAlert('OAP')">
+            <source src="Vid4.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <script>
+        // Function to show an alert when clicking an image or video
+        function showAlert(item) {
+            alert("You clicked on " + item);
+        }
+    </script>
+
+</body>
+</html>

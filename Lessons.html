@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>E-Portfolio | Lessons</title>
+    <link href='https://fonts.googleapis.com/css?family=Pixelify Sans' rel='stylesheet'>
+    <style>
+        /* Basic styling */
+        body {
+            font-family: 'Pixelify Sans';
+            text-align: center;
+            padding: 50px;
+	    background-image: url("MainBG.jpg");
+            background-color: #4D516C;
+	    margin: 0;
+        }
+
+.navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+	    background: #2e4053;
+            display: flex;
+            align-items: Center;
+	    justify-content: center;
+            padding: 20px;
+        }
+
+        /* Navbar Links */
+        .navbar a {
+            color: White;
+            text-decoration: none;
+            padding: 10px 15px;
+	    font-family: 'Pixelify Sans';
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        /* Dropdown Container */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background: #2e4053;
+            min-width: 150px;
+            top: 100%;
+            left: 0;
+            z-index: 1;
+	    border: 1px solid Black;
+        }
+
+        .dropdown-content a {
+            display: block;
+            padding: 10px;
+            color: #FFC300		;
+            text-decoration: none;
+            border-bottom: 1px solid Black;
+        }
+
+        .dropdown-content a:hover {
+            background: #ddd;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+
+        .container {
+            background: White;
+            padding: 40px;
+            border-radius: 4px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+        }
+
+        select {
+            padding: 20px;
+            font-size: 27px;
+        }
+
+        button {
+            padding: 20px 22px;
+            margin-left: 10px;
+            font-size: 20px;
+            cursor: pointer;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <!-- Home Button -->
+        <a href="Index.html">Home</a>
+
+        <div class="dropdown">
+            <a href="#">Other PortFolio ▼</a>
+            <div class="dropdown-content">
+                <a href="File Not Found">1st Quarter</a>
+            	<a href="https://encr.pw/5YuG2" target="_blank">2nd Quarter</a>
+            </div>
+        </div>
+    </div>
+<br><br><br><br><br><br>
+
+    <div class="container">
+        <h1>Select a Lesson</h1>
+        <select id="pageSelect">
+            <option value="">-- Choose or Perish --</option>
+            <option value="Lesson 1.html">Lesson 1 - Events & Popup Boxes</option>
+            <option value="Lesson 2.html">Lesson 2 - Conditions, Controls & Loops</option>
+            <option value="Lesson 3.html">Lesson 3 - Switch Statements</option>
+            <option value="Lesson 4.html">Lesson 4 - Loops</option>
+        </select>
+        <button onclick="goToPage()">Go</button>
+    </div>
+
+    <script>
+        function goToPage() {
+            let selectedPage = document.getElementById("pageSelect").value;
+            if (selectedPage) {
+                window.location.href = selectedPage; // Redirect to the selected page
+            } else {
+                alert("Choose One or you will suffer the wrath of the Shadow Monarch");
+            }
+        }
+    </script>
+
+</body>
+</html>

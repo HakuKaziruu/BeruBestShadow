@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lesson 1: Events & Popup Boxes</title>
+    <link href='https://fonts.googleapis.com/css?family=Pixelify Sans' rel='stylesheet'>
+    <style>
+        /* Page styling */
+        body {
+            background-image: url("MainBG.jpg");
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Main title */
+        h1 {
+            color: LightBlue;
+            font-size: 40px;
+            font-family: 'Pixelify Sans';
+        }
+
+        /* Lesson sections */
+        .lesson {
+            background: Gray;
+            padding: 20px;
+            margin: 20px auto;
+            border-radius: 8px;
+            width: 80%;
+        }
+
+        /* Code box styling */
+        .code-box {
+            background: black;
+            color: White;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: left;
+            font-family: 'Pixelify Sans';
+            white-space: pre-wrap;
+            overflow-x: auto;
+            margin-top: 10px;
+        }
+
+        /* Button styling */
+        button {
+            background: #ff5733;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            margin-top: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background: #ff2e00;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Lesson 4: Loops</h1>
+
+    <!-- For Loops -->
+    <div class="lesson">
+        <h2>For Loops</h2>
+        <button onclick="testForLoop()">Run For Loop</button>
+        <p><strong>Output:</strong> Numbers from 1 to 5.</p>
+    </div>
+
+    <!-- While Loops -->
+    <div class="lesson">
+        <h2>While Loops</h2>
+        <button onclick="testWhileLoop()">Run While Loop</button>
+        <p><strong>Output:</strong> Numbers from 1 to 5.</p>
+    </div>
+
+    <!-- Do While Loops -->
+    <div class="lesson">
+        <h2>Do While Loops</h2>
+        <button onclick="testDoWhileLoop()">Run Do While Loop</button>
+        <p><strong>Output:</strong> Numbers from 1 to 5.</p>
+    </div>
+
+    <!-- For In Loops -->
+    <div class="lesson">
+        <h2>For In Loops</h2>
+        <button onclick="testForInLoop()">Run For In Loop</button>
+        <p><strong>Output:</strong> Lists properties of an object.</p>
+    </div>
+
+    <!-- Break Statements -->
+    <div class="lesson">
+        <h2>Break Statements</h2>
+        <button onclick="testBreak()">Run Break Example</button>
+        <p><strong>Output:</strong> Stops loop when reaching 3.</p>
+    </div>
+
+    <!-- Continue Statements -->
+    <div class="lesson">
+        <h2>Continue Statements</h2>
+        <button onclick="testContinue()">Run Continue Example</button>
+        <p><strong>Output:</strong> Skips number 3 in the loop.</p>
+    </div>
+
+    <script>
+        // For Loop Example
+        function testForLoop() {
+            let output = "";
+            for (let i = 1; i <= 5; i++) {
+                output += i + " ";
+            }
+            alert("For Loop Output: " + output);
+        }
+
+        // While Loop Example
+        function testWhileLoop() {
+            let output = "";
+            let i = 1;
+            while (i <= 5) {
+                output += i + " ";
+                i++;
+            }
+            alert("While Loop Output: " + output);
+        }
+
+        // Do While Loop Example
+        function testDoWhileLoop() {
+            let output = "";
+            let i = 1;
+            do {
+                output += i + " ";
+                i++;
+            } while (i <= 5);
+            alert("Do While Loop Output: " + output);
+        }
+
+        // For In Loop Example
+        function testForInLoop() {
+            let person = { name: "John", age: 25, city: "New York" };
+            let output = "";
+            for (let key in person) {
+                output += key + ": " + person[key] + "\n";
+            }
+            alert("For In Loop Output:\n" + output);
+        }
+
+        // Break Example
+        function testBreak() {
+            let output = "";
+            for (let i = 1; i <= 5; i++) {
+                if (i === 3) break; // Stop at 3
+                output += i + " ";
+            }
+            alert("Break Example Output: " + output);
+        }
+
+        // Continue Example
+        function testContinue() {
+            let output = "";
+            for (let i = 1; i <= 5; i++) {
+                if (i === 3) continue; // Skip 3
+                output += i + " ";
+            }
+            alert("Continue Example Output: " + output);
+        }
+    </script>
+
+</body>
+</html>

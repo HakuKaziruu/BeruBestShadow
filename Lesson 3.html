@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lesson 3: Switch Statements</title>
+    <link href='https://fonts.googleapis.com/css?family=Pixelify Sans' rel='stylesheet'>
+    <style>
+        /* Page styling */
+        body {
+            background-image: url("MainBG.jpg");
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Main title */
+        h1 {
+            color: LightBlue;
+            font-size: 40px;
+            font-family: 'Pixelify Sans';
+        }
+
+        /* Lesson sections */
+        .lesson {
+            background: Gray;
+            padding: 20px;
+            margin: 20px auto;
+            border-radius: 8px;
+            width: 80%;
+        }
+
+        /* Code box styling */
+        .code-box {
+            background: black;
+            color: White;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: left;
+            font-family: 'Pixelify Sans';
+            white-space: pre-wrap;
+            overflow-x: auto;
+            margin-top: 10px;
+        }
+
+        /* Button styling */
+        button {
+            background: #ff5733;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            margin-top: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background: #ff2e00;
+        }
+    </style>
+</head>
+<body>
+
+     <h1>Lesson 3: Switch Statements</h1>
+
+    <!-- More about Switch Statements -->
+    <div class="lesson">
+        <h2>More about Switch Statements</h2>
+        <button onclick="testSwitch()">Pick a Color</button>
+        <p><strong>Output:</strong> Displays a color meaning based on user choice.</p>
+    </div>
+
+    <!-- Return Statements -->
+    <div class="lesson">
+        <h2>Return Statements</h2>
+        <button onclick="testReturn()">Check Discount</button>
+        <p><strong>Output:</strong> Returns a discount percentage based on membership type.</p>
+    </div>
+
+    <!-- JavaScript Functions -->
+    <script>
+        function testSwitch() {
+            let color = prompt("Enter a color (red, blue, green):");
+
+            // Prevent error if user cancels the prompt
+            if (!color) {
+                alert("No color entered.");
+                return;
+            }
+
+            let message;
+            switch (color.toLowerCase()) {
+                case "red":
+                    message = "Red means stop!";
+                    break;
+                case "blue":
+                    message = "Blue means calm and peaceful.";
+                    break;
+                case "green":
+                    message = "Green means go!";
+                    break;
+                default:
+                    message = "I don't know that color.";
+            }
+
+            alert(message);
+        }
+
+        function getDiscount(memberType) {
+            if (!memberType) return 0; // Handle null input safely
+
+            switch (memberType.toLowerCase()) {
+                case "gold":
+                    return 30;
+                case "silver":
+                    return 20;
+                case "bronze":
+                    return 10;
+                default:
+                    return 0;
+            }
+        }
+
+        function testReturn() {
+            let member = prompt("Enter your membership type (Gold, Silver, Bronze):");
+
+            if (!member) {
+                alert("No membership type entered.");
+                return;
+            }
+
+            let discount = getDiscount(member);
+            alert("Your discount is: " + discount + "%");
+        }
+    </script>
+
+
+</body>
+</html>
